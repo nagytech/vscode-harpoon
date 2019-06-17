@@ -1,0 +1,38 @@
+# Javascript Node CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-javascript/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: ~/repo
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "01:80:88:4d:9b:e7:7a:72:f1:49:69:9d:9e:10:20:06"
+      - run:
+          name: Git config
+          command: |
+            git config --global user.email "nagytech@users.noreply.github.com"
+            git config --global user.name "Jonathan Nagy (via CI/CD)"
+      - run:
+          name: Install Visual Studio Code Extensions
+          command: sudo npm install -g vsce
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - run:
+          name: VSCE Publish
+          command: vsce publish minor -p $AZURE_DEVOPS_PAT
+      - run:
+          name: Push changes
+          command: git push origin master

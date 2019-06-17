@@ -1,17 +1,29 @@
 {
   "name": "harpoon",
-  "displayName": "harpoon",
+  "displayName": "Harpoon",
   "description": "Get over here!",
   "version": "0.0.1",
-  "publisher": "jnagy",
+  "publisher": "nagytech",
+  "repository": {
+    "url": "https://github.com/nagytech/vscode-harpoon",
+    "type": "git"
+  },
   "engines": {
     "vscode": "^1.35.0"
   },
   "categories": [
+    "Debuggers",
     "Other"
   ],
   "activationEvents": [
     "onDebug"
+  ],
+  "badges": [
+    {
+      "url": "https://circleci.com/gh/nagytech/vscode-harpoon.png",
+      "href": "https://circleci.com/gh/nagytech/vscode-harpoon",
+      "description": "Circle CI Build Status"
+    }
   ],
   "main": "./out/Extension.js",
   "contributes": {},

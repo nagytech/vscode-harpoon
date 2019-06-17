@@ -1,5 +1,7 @@
 # harpoon
 
+[![CircleCI](https://circleci.com/gh/nagytech/vscode-harpoon.png)](https://circleci.com/gh/nagytech/vscode-harpoon)
+
 This is a VSCode extension that monitors the main process
 of an active DebugSession for spawned child processes.
 Once a child process is identified, an attempt will be
@@ -32,7 +34,8 @@ Harpoon will discreetly check for the system for child processes every second.
 
 # Install
 
-- Search for 'harpoon' on the marketplace; or
+- https://marketplace.visualstudio.com/items?itemName=NagyTech.harpoon; or
+- Search for 'harpoon' in the VSCode extension manager; or
 - Download the harpoon-x.x.x.vsix file to install manually.
 
 # Limitations
