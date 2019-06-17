@@ -2,7 +2,7 @@
   "name": "harpoon",
   "displayName": "Harpoon",
   "description": "Get over here!",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "nagytech",
   "repository": {
     "url": "https://github.com/nagytech/vscode-harpoon",
